@@ -103,7 +103,49 @@ lerna-debug.log*
 # client/src/App.css
 
 ```css
-
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  .card {
+    padding: 2em;
+  }
+  
+  .read-the-docs {
+    color: #888;
+  }
+  
 ```
 
 # client/src/App.jsx
@@ -203,25 +245,25 @@ export default App
 
 ```jsx
 function Feed({ title, link, date, source }) {
-    return (
-      <div className="p-4 border-b hover:bg-gray-50 transition-colors">
-        <h2 className="font-bold text-lg mb-2">{title}</h2>
-        <p className="text-sm text-gray-500 mb-2">
-          {new Date(date).toLocaleDateString()} - {source}
-        </p>
-        <a 
-          href={link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-blue-500 hover:text-blue-700 transition-colors"
-        >
-          Read More →
-        </a>
-      </div>
-    )
-  }
-  
-  export default Feed
+  return (
+    <div className="p-6 border-b hover:bg-gray-50 transition-all duration-300">
+      <h2 className="font-bold text-xl mb-3 text-gray-800 hover:text-gray-600 transition-colors">{title}</h2>
+      <p className="text-sm text-gray-500 mb-3">
+        {new Date(date).toLocaleDateString()} - {source}
+      </p>
+      <a 
+        href={link} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="inline-block text-blue-500 hover:text-blue-700 transition-colors font-medium hover:underline"
+      >
+        Read More →
+      </a>
+    </div>
+  )
+}
+
+export default Feed
 ```
 
 # client/src/index.css
@@ -231,7 +273,24 @@ function Feed({ title, link, date, source }) {
 @tailwind components;
 @tailwind utilities;
 
-
+body {
+    @apply bg-gray-50;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
 ```
 
 # client/src/main.jsx
@@ -365,7 +424,7 @@ const app = express()
 
 // Configure CORS
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'https://supreme-guide-r4r9rgv7v6qq3x9w4-5174.app.github.dev/',
+    origin: process.env.CLIENT_URL || 'https://supreme-guide-r4r9rgv7v6qq3x9w4-5174.app.github.dev',
     methods: ['GET'],
     optionsSuccessStatus: 200
 }));

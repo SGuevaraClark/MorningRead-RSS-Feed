@@ -48,11 +48,13 @@ function App() {
           className="p-2 border rounded"
         >
           <option value="all">All Sources</option>
-          <option value="delfino">Delfino</option>
-          <option value="crhoy">CR Hoy</option>
-          <option value="nacion">La Nación</option>
-          <option value="amprensa">AM Prensa</option>
-          <option value="semanario">Semanario</option>
+          <option value="Delfino">Delfino</option>
+          <option value="Crhoy">CR Hoy</option>
+          <option value="Nacion">La Nación</option>
+          <option value="Amprensa">AM Prensa</option>
+          <option value="Observador">Observador</option>
+          <option value="MundoCR">El Mundo</option>
+          <option value="Extra">Diario Extra</option>
         </select>
       </div>
 

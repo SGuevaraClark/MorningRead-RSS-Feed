@@ -11,11 +11,13 @@ const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173'
 const RSS_REFRESH_INTERVAL = process.env.RSS_REFRESH_INTERVAL || 30 * 60 * 1000 // 30 minutes
 
 const feedURLs = {
-    delfino: "https://delfino.cr/feed/",
-    crhoy: "https://www.crhoy.com/feed/",
-    nacion: "https://www.nacion.com/arcio/rss/",
-    amprensa: "https://amprensa.com/feed/",
-    semanario: "https://semanariouniversidad.com/feed/"
+    Delfino: "https://delfino.cr/feed/",
+    Crhoy: "https://www.crhoy.com/feed/",
+    Nacion: "https://www.nacion.com/arcio/rss/",
+    Amprensa: "https://amprensa.com/feed/",
+    Observador: "https://observador.cr/feed/",
+    MundoCR: "https://elmundo.cr/feed/",
+    Extra: "https://www.diarioextra.com/feed"
 }
 
 const parser = new RSSParser()
